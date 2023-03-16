@@ -18,8 +18,7 @@ public class Role implements GrantedAuthority {
     @ManyToMany(mappedBy = "roles")
     private List<User> users;
 
-    public Role() {
-    }
+    public Role() {}
 
     public Role(Integer id) {
         this.id = id;
@@ -66,5 +65,10 @@ public class Role implements GrantedAuthority {
     @Override
     public String getAuthority() {
         return getRoleTitle();
+    }
+
+    @Override
+    public String toString() {
+        return roleTitle.split("_")[1];
     }
 }
