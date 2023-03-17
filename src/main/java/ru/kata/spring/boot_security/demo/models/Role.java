@@ -7,7 +7,6 @@ import javax.validation.constraints.NotEmpty;
 import java.util.List;
 
 @Entity
-@Table(name = "role")
 public class Role implements GrantedAuthority {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;

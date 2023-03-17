@@ -12,7 +12,6 @@ import ru.kata.spring.boot_security.demo.repositories.RoleRepository;
 import ru.kata.spring.boot_security.demo.repositories.UserRepository;
 
 
-import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -60,6 +59,7 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional
     public void updateUser(Integer id, User updatedUser) {
+        updatedUser.setPassword(bCryptPasswordEncoder.encode(updatedUser.getPassword()));
         userRepository.save(updatedUser);
     }
 

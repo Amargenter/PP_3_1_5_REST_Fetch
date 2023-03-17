@@ -175,7 +175,8 @@
                         <br>
                         <div class="form-group">
                           <label for="password" class="form-control-label bold-text">Password</label>
-                          <input type="password" class="form-control modal-row" id="password"/>
+                          <input type="password" class="form-control modal-row" id="password"
+                                 th:value="${u.getPassword()}" name="Password"/>
                         </div>
                         <br>
                         <div class="form-group">
